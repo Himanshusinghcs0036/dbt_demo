@@ -13,7 +13,7 @@ my-snowflake-db:
       role: PC_DBT_ROLE
       database: PC_DBT_DB
       warehouse: PC_DBT_WH
-      schema: PUBLIC
+      schema: DBT_VISA
       threads: 4
       client_session_keep_alive: False
       query_tag: visa_poc

@@ -4,8 +4,8 @@ version: 2
 sources:
   - name: raw_data
     description: 'Database to storage the raw data'
-    database: dev
-    schema: analytics_raw
+    database: SNOWFLAKE_SAMPLE_DATA
+    schema: TPCDS_SF100TCL
     tables:
       - name: customers
       - name: orders
