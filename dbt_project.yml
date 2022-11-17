@@ -33,37 +33,38 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
 
   dbt_demo:
-
+    enabled: true
+    tags: poc
     # This configures models found in models/raw/
-    raw: # tables with raw data
-      schema: raw
-      transient: false
-      materialized: table
-      tags: raw
+    # raw: # tables with raw data
+    #   schema: raw
+    #   transient: false
+    #   materialized: table
+    #   tags: raw
 
-    # This configures models found in models/stg/  
-    stg: # tables with data already prepared
-      schema: stg
-      materialized: view
-      transient: false
-      tags: stg
+    # # This configures models found in models/stg/  
+    # stg: # tables with data already prepared
+    #   schema: stg
+    #   materialized: view
+    #   transient: false
+    #   tags: stg
 
-    # This configures models found in models/edw/  
-    edw: # dimensions and facts tables
-      schema: edw
-      materialized: incremental
-      on_schema_change: append_new_columns
-      transient: false
-      tags: edw
+    # # This configures models found in models/edw/  
+    # edw: # dimensions and facts tables
+    #   schema: edw
+    #   materialized: incremental
+    #   on_schema_change: append_new_columns
+    #   transient: false
+    #   tags: edw
 
     # This configures models found in models/views/
-    views: # views consuming from edw objects
-      schema: edw
-      materialized: view
-      transient: false
-      tags: 
-        - edw
-        - view
+    # views: # views consuming from edw objects
+    #   schema: edw
+    #   materialized: view
+    #   transient: false
+    #   tags: 
+    #     - edw
+    #     - view
 
 
 # Configuring seeds
